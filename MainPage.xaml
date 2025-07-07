@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HexColorGenerator.MainPage" Shell.NavBarIsVisible="False">
+    
+    <ContentPage.Resources>
+
+        <Color x:Key="Primary">#FFEAC5</Color>
+        <Color x:Key="Secondary">#FFDBB5</Color>
+        <Color x:Key="Tertiary">#6C4E31</Color>
+
+    </ContentPage.Resources>
+
+    <Grid x:Name="Container" BackgroundColor="Black">
+
+        <Image Source="knightrescue.png"
+               HorizontalOptions="Start"
+               Aspect="AspectFit"
+               HeightRequest="350"
+               WidthRequest="360"
+               Margin="0,-40,0,0"
+               VerticalOptions="StartAndExpand"
+               Opacity="1"/>
+
+        <Image Source="dragons.png"
+               HorizontalOptions="Start"
+               Aspect="AspectFit"
+               HeightRequest="350"
+               WidthRequest="360"
+               Margin="0,-40,0,0"
+               VerticalOptions="StartAndExpand"
+               Opacity="1"/>
+        
+
+        <Frame Margin="0,435,0,3" HeightRequest="460" CornerRadius="10" VerticalOptions="End" BackgroundColor="#FFDBB5">
+
+            <Grid>
+                
+                <Image Source="framebackground.png"
+                       HeightRequest="420"
+                       WidthRequest="420"
+                       Margin="0,0,0,0"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"/>
+
+
+                <VerticalStackLayout Spacing="15" VerticalOptions="End">
+
+                    <Label Text="Hex Color Generator"
+                           TextColor="#A04747"
+                           FontAttributes="Bold"
+                           FontFamily="Sketch Gothic School"
+                           FontSize="Title"
+                           HorizontalTextAlignment="Center"/>
+                           
+
+                    <Label Text="Red Value: " TextColor="Red" FontAttributes="Italic" FontSize="15" />
+
+                    <Slider x:Name="sldRed"
+                             MaximumTrackColor="{StaticResource Secondary}"
+                             MinimumTrackColor="Red"
+                             ThumbColor="Red"
+                             ThumbImageSource="dragon.png"
+                             ValueChanged="sldRed_ValueChanged"/>
+
+                    <Label Text="Green Value: " TextColor="Green" FontAttributes="Italic"  FontSize="15" />
+
+                    <Slider x:Name="sldGreen"
+                            MaximumTrackColor="{StaticResource Secondary}"
+                            MinimumTrackColor="Green"
+                            ThumbColor="Green"
+                            ThumbImageSource="wizard.png"
+                            ValueChanged="sldRed_ValueChanged"/>
+
+                    <Label Text="Blue Value: " TextColor="Blue" FontAttributes="Italic"  FontSize="15"/>
+
+                    <Slider x:Name="sldBlue"
+                            MaximumTrackColor="{StaticResource Secondary}"
+                            MinimumTrackColor="Blue"
+                            ThumbColor="Blue"
+                            ThumbImageSource="knight.png"
+                            ValueChanged="sldRed_ValueChanged"/>
+
+                    <Frame CornerRadius="15" HorizontalOptions="Center" BackgroundColor="#A04747">
+
+                        <HorizontalStackLayout>
+                            <Label x:Name="lblHex"
+                                   HorizontalTextAlignment="Center"
+                                   Text="HEX VALUE: #00000"
+                                   TextColor="White"
+                                   VerticalOptions="Center"/>
+
+                            <ImageButton Margin="10,0,0,0"
+                                         HeightRequest="25"
+                                         WidthRequest="25"
+                                         Source="copy.png"
+                                         VerticalOptions="Center"
+                                         Clicked="ImageButton_Clicked"/>
+
+                        </HorizontalStackLayout>
+
+                    </Frame>
+
+                    <Button x:Name="btnRandom"
+                            Background="{StaticResource Primary}"
+                            Text="Generate Random Color"
+                            TextColor="White"
+                            Clicked="btnRandom_Clicked"
+                            CornerRadius="10"
+                            BorderWidth="2"
+                            BorderColor="{StaticResource Secondary}"/>
+
+                </VerticalStackLayout>
+
+
+
+            </Grid>
+
+       
+
+            
+
+        </Frame>
+        
+    </Grid>
+
+</ContentPage>
